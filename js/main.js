@@ -141,22 +141,20 @@ document.getElementById("btn5FOR").onclick = function () {
 
 
 // Tạo Div Xanh-Đỏ
-function themDiv() {
-    const DivContainer = document.getElementById("content");
-    const newDiv = document.createElement("div");
-    DivContainer.appendChild(newDiv);
-} document.getElementById("btn6FOR").onclick = themDiv;
 
-function thayMau() {
+document.getElementById("btn6FOR").onclick = function () {
     for (var i = 1; i <= 10; i++) {
-        if ((i + 1) % 2 == 0) {
-
+        var div = document.createElement("div");
+        document.getElementById("content").appendChild(div);
+        if (i % 2 == 0) {
+            div.style.cssText = "padding: 20px; background-color: red;";
+            div.innerHTML = "Thẻ Chẵn"
         } else {
-            
+            div.style.cssText = "padding: 20px; background-color: blue;";
+            div.innerHTML = "Thẻ Lẻ"
         }
     }
-} document.getElementById("btn6FOR").onclick = thayMau;
-
+}
 
 
 // In số nguyên tố
