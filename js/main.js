@@ -141,45 +141,45 @@ document.getElementById("btn5FOR").onclick = function () {
 
 
 // Tạo Div Xanh-Đỏ
-// document.getElementById("btn6FOR").onclick = function () {
+function themDiv() {
+    const DivContainer = document.getElementById("content");
+    const newDiv = document.createElement("div");
+    DivContainer.appendChild(newDiv);
+} document.getElementById("btn6FOR").onclick = themDiv;
 
-//     for (var i = 1; i <= 10; i++) {
-//         if (i % 2 == 0) {
-//                 ;
-//         } else {
+function thayMau() {
+    for (var i = 1; i <= 10; i++) {
+        if ((i + 1) % 2 == 0) {
 
-//             break;
-//         }
-//     }
-//     document.getElementById("result6FOR").innerHTML = "Kết quả: " + total;
-// }
-// function taoDiv() { 
-//     for (var e = "", t = 1; t <= 10; t++)
-//     e += t % 2 == 0 ? 
-//     "<div class='bg-danger text-white p-2'>Div chẵn</div>"; 
-// else { 
-//     "<div class='bg-primary text-white  p-2'>Div lẻ </div>" 
-// } 
-// }
+        } else {
+            
+        }
+    }
+} document.getElementById("btn6FOR").onclick = thayMau;
+
+function taoDiv(){for(var e="",t=1;t<=10;t++)e+=t%2==0?"<div class='bg-danger text-white p-2'>Div chẵn</div>":"<div class='bg-primary text-white  p-2'>Div lẻ </div>";document.getElementById("txtResult6").innerHTML=e}
+
 
 
 // In số nguyên tố
-function checkPrime() {
-    var numb = Number(document.getElementById("inputSoNT").value);
-    var result = "";
-
+function checkPrime(numb) {
     if (numb <= 1) {
         return false;
     } else {
-        for (var i = 2; i < Math.sqrt(numb); i++) {
-            if (numb % i != 0) {
-                result += i + " ";
+        for (var i = 2; i < numb; i++) {
+            if (numb % i == 0) {
+                return false;
             }
         }
+    } return true;
+}
+function xuatSoNguyen() {
+    var numb = Number(document.getElementById("inputSoNT").value);
+    var result = "";
+    for (var i = 2; i <= numb; i++) {
+        if (checkPrime(i) == true) {
+            result += i + " ";
+        }
     }
-    document.getElementById("result7FOR").innerHTML = "Kết quả: " + result;
-} document.getElementById("btn7FOR").onclick = checkPrime;
-
-
-
-
+    document.getElementById("result7FOR").innerHTML = "Kết quả: " + result
+} document.getElementById("btn7FOR").onclick = xuatSoNguyen;
